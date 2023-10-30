@@ -34,7 +34,7 @@ const AddTask = () => {
       </button>
 
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
-        <form onSubmit={handleSubmitNewTodo}>
+                <form onSubmit={handleSubmitNewTodo}>
           <h3 className='font-bold text-white  text-lg'>Add new task</h3>
           <div className='modal-action'>
             <input
