@@ -52,7 +52,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
                 onChange={(e) => setTaskToEdit(e.target.value)}
                 type='text'
                 placeholder='Type here'
-                className='input input-bordered w-full'
+                className='input input-bordered w-full text-white'
               />
               <button type='submit' className='btn'>
                 Submit
@@ -68,7 +68,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
         />
         <Modal modalOpen={openModalDeleted} setModalOpen={setOpenModalDeleted}>
           <h3 className='text-lg'>
-            Are you sure, you want to delete this task?
+            Do you want to delete this task?
           </h3>
           <div className='modal-action'>
             <button onClick={() => handleDeleteTask(task.id)} className='btn'>

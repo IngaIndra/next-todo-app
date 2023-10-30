@@ -14,9 +14,10 @@ const AddTask = () => {
 
   const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
+    const task = newTaskValue.charAt(0).toUpperCase() + newTaskValue.slice(1).toLowerCase();
     await addTodo({
       id: uuidv4(),
-      text: newTaskValue,
+      text: task,
     });
     setNewTaskValue("");
     setModalOpen(false);
@@ -27,23 +28,23 @@ const AddTask = () => {
     <div>
       <button
         onClick={() => setModalOpen(true)}
-        className='btn btn-primary w-full'
+        className='btn border hover:border-white text-white w-full'
       >
         Add new task <AiOutlinePlus className='ml-2' size={18} />
       </button>
 
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
         <form onSubmit={handleSubmitNewTodo}>
-          <h3 className='font-bold text-lg'>Add new task</h3>
+          <h3 className='font-bold text-white  text-lg'>Add new task</h3>
           <div className='modal-action'>
             <input
               value={newTaskValue}
               onChange={(e) => setNewTaskValue(e.target.value)}
               type='text'
               placeholder='Type here'
-              className='input input-bordered w-full'
+              className='input text-white input-bordered w-full'
             />
-            <button type='submit' className='btn'>
+            <button type='submit' className='btn text-white '>
               Submit
             </button>
           </div>
